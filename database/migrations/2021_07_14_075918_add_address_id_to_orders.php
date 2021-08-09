@@ -14,7 +14,7 @@ class AddAddressIdToOrders extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->bigInteger('address_id')->default(null);
+            $table->foreignId('address_id')->constrained("addresses");
         });
     }
 

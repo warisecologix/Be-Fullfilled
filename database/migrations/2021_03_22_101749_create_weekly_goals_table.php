@@ -18,7 +18,7 @@ class CreateWeeklyGoalsTable extends Migration
             $table->date('day');
             $table->text('goal');
             $table->boolean('status')->default(0);
-            $table->bigInteger('user_id')->unsigned();
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

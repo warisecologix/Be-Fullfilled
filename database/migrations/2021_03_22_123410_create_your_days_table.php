@@ -16,8 +16,8 @@ class CreateYourDaysTable extends Migration
         Schema::create('your_days', function (Blueprint $table) {
             $table->id();
             $table->text('answer');
-            $table->bigInteger('user_id');
-            $table->bigInteger('daily_question_id');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('daily_question_id')->constrained('daily_questions');
             $table->timestamps();
         });
     }

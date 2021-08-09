@@ -17,7 +17,7 @@ class CreateBugReportsTable extends Migration
             $table->id();
             $table->text('description');
             $table->text('media');
-            $table->bigInteger('user_id');
+            $table->foreignId('user_id')->constrained("users");
             $table->timestamps();
         });
     }

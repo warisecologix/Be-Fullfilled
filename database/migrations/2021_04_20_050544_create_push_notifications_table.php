@@ -18,7 +18,7 @@ class CreatePushNotificationsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->date('date');
-            $table->bigInteger('image_id')->nullable();
+            $table->foreignId('image_id')->constrained("images");
             $table->timestamps();
         });
     }

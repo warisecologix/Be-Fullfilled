@@ -17,7 +17,7 @@ class CreateFocusDaysTable extends Migration
             $table->id();
             $table->date('date');
             $table->string('focus_value');
-            $table->bigInteger('user_id');
+            $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });
     }

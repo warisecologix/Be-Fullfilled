@@ -17,7 +17,7 @@ class CreateFeedBacksTable extends Migration
             $table->id();
             $table->string('service_status')->default('');
             $table->text('what_wrong')->nullable();
-            $table->bigInteger('user_id');
+            $table->foreignId('user_id')->constrained("users");
             $table->timestamps();
         });
     }

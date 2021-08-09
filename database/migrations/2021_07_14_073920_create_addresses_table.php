@@ -18,7 +18,7 @@ class CreateAddressesTable extends Migration
             $table->string('city');
             $table->string('zip_code');
             $table->text('street_address');
-            $table->text('user_id');
+            $table->foreignId('user_id')->constarined("users");
             $table->timestamps();
         });
     }

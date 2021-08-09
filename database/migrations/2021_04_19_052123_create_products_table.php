@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->double('price');
             $table->text('description');
             $table->text('ingredient');
-            $table->bigInteger('image_id');
+            $table->foreignId('image_id')->constrained("images");
             $table->timestamps();
         });
     }

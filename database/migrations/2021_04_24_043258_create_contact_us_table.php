@@ -17,7 +17,7 @@ class CreateContactUsTable extends Migration
             $table->id();
             $table->text('subject');
             $table->text('message');
-            $table->bigInteger('user_id');
+            $table->foreignId('user_id')->constrained("users");
             $table->timestamps();
         });
     }

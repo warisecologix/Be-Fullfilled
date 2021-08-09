@@ -19,9 +19,9 @@ class CreateOrdersTable extends Migration
             $table->bigInteger('quantity');
             $table->double('total_price');
             $table->text('shipping_address');
-            $table->bigInteger('order_status_id')->default(1);
-            $table->bigInteger('product_id')->nullable();
-            $table->bigInteger('user_id')->nullable();
+            $table->foreignId('order_status_id')->constrained('order_statuses')->default(1);
+            $table->bigInteger('product_id');
+            $table->foreignId('user_id')->constrained("users");
             $table->date('date')->default(now());
             $table->timestamps();
         });

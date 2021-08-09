@@ -18,8 +18,8 @@ class CreateOrderProductsTable extends Migration
             $table->double('price');
             $table->bigInteger('quantity');
             $table->double('total_price');
-            $table->bigInteger('product_id');
-            $table->bigInteger('order_id');
+            $table->foreignId('product_id')->constrained("products");
+            $table->foreignId('order_id')->constrained("orders");
             $table->timestamps();
         });
     }

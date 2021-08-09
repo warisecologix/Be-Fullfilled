@@ -17,8 +17,8 @@ class CreatePodcastsTable extends Migration
             $table->id();
             $table->string('title');
             $table->date('date');
-            $table->bigInteger('image_id')->nullable();
-            $table->bigInteger('media_id')->nullable();
+            $table->foreignId('image_id')->constrained("images");
+            $table->foreignId('media_id')->constrained("media");
             $table->timestamps();
         });
     }

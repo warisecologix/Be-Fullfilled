@@ -19,7 +19,7 @@ class CreateConfigurationsTable extends Migration
             $table->integer('general_notification')->default(1);
             $table->integer('partner_invitation')->default(1);
             $table->integer('location_access')->default(1);
-            $table->bigInteger('user_id');
+            $table->foreignId('user_id')->constrained("users");
             $table->timestamps();
         });
     }

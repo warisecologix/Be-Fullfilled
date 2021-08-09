@@ -15,8 +15,8 @@ class CreateInvitePartnersTable extends Migration
     {
         Schema::create('invite_partners', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
-            $table->bigInteger('partner_id');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('partner_id')->constrained('users');
             $table->boolean('status')->default(0);
             $table->date('date_invitation')->default(now());
             $table->date('accept_invitation')->nullable();

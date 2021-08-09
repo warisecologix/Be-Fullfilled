@@ -14,7 +14,7 @@ class AddScoreCardIdToFocusDays extends Migration
     public function up()
     {
         Schema::table('focus_days', function (Blueprint $table) {
-            $table->bigInteger('score_card_id');
+            $table->foreignId('score_card_id')->constrained("score_cards");
         });
     }
 

@@ -19,7 +19,7 @@ class CreateStripeInitiatePaymentsTable extends Migration
             $table->text('ephemeralKey');
             $table->text('customer');
             $table->string('status')->default('first phase');
-            $table->bigInteger('user_id');
+            $table->foreignId('user_id')->constrained("users");
             $table->timestamps();
         });
     }

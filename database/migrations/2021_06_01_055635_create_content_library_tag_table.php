@@ -15,8 +15,8 @@ class CreateContentLibraryTagTable extends Migration
     {
         Schema::create('content_library_tag', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('content_library_id')->unsigned();
-            $table->bigInteger('tag_id')->unsigned();
+            $table->foreignId('content_library_id')->constrained('content_libraries');
+            $table->foreignId('tag_id')->constrained('tags');
             $table->timestamps();
         });
     }

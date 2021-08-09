@@ -15,9 +15,9 @@ class CreateUserDailyCheckQuestionsTable extends Migration
     {
         Schema::create('user_daily_check_questions', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('daily_check_question_id');
+            $table->foreignId('daily_check_question_id')->constrained("daily_check_questions");
             $table->boolean('status'); // 1 yes 0 no
-            $table->bigInteger('user_id');
+            $table->foreignId('user_id')->constrained("users");
             $table->date('date')->default(now());
             $table->timestamps();
         });
