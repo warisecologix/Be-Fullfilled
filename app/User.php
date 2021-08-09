@@ -123,4 +123,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Address::class);
     }
+
+    public function my_partners(){
+        return $this->hasMany(InvitePartner::class);
+    }
+
+    public function me_partners(){
+        return $this->hasMany(InvitePartner::class, 'partner_id');
+    }
 }

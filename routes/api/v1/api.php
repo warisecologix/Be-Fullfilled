@@ -13,6 +13,7 @@ use App\Http\Controllers\api\v1\FAQController;
 use App\Http\Controllers\api\v1\FeedBackController;
 use App\Http\Controllers\api\v1\FlipTheSwitchController as FlipSwitch;
 use App\Http\Controllers\api\v1\FocusController;
+use App\Http\Controllers\api\v1\InvitePartnerController;
 use App\Http\Controllers\api\v1\IsRecordExists;
 use App\Http\Controllers\api\v1\LoginController;
 use App\Http\Controllers\api\v1\NotesController;
@@ -224,6 +225,13 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/transaction', [OrderController::class, 'transaction']);
     Route::post('/dashboard', [FocusController::class, 'dashboard']);
 
+    /*
+    |--------------------------------------------------------------------------
+    | Route for Invite Partner
+    |--------------------------------------------------------------------------
+    */
+
+    Route::get('/partner', [InvitePartnerController::class, 'index']);
 
 });
 
@@ -287,4 +295,4 @@ Route::get('/terms-and-conditions', [TermConditionController::class, 'index']);
 Route::get('/faq-search/{search}', [FAQController::class, 'search']);
 
 
-Route::post('/payment-sheet', [StripeInitiatePaymentController::class,'store']);
+Route::post('/payment-sheet', [StripeInitiatePaymentController::class, 'store']);
