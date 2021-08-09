@@ -125,10 +125,10 @@ class User extends Authenticatable
     }
 
     public function my_partners(){
-        return $this->hasMany(InvitePartner::class);
+        return $this->hasMany(InvitePartner::class)->where('status' , '!=',0);
     }
 
     public function me_partners(){
-        return $this->hasMany(InvitePartner::class, 'partner_id');
+        return $this->hasMany(InvitePartner::class, 'partner_id')->where('status' , '!=',0);
     }
 }

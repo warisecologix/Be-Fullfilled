@@ -13,4 +13,14 @@ class InvitePartner extends Model
         'date_invitation',
         'accept_invitation'
     ];
+
+    public function my_partner()
+    {
+        return $this->belongsTo(User::class, 'partner_id', 'id');
+    }
+
+    public function me_partner()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }
