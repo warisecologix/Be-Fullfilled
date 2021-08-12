@@ -47,11 +47,11 @@ class DatabaseSeeder extends Seeder
                 'color'=>'#C1EE88',
             ]
         ]);
-//        $this->call([
-//            TagSeeder::class,
-//            OrderStatusSeeder::class,
-//            DailyCheckQuestionSeeder::class
-//        ]);
+        $this->call([
+            TagSeeder::class,
+            OrderStatusSeeder::class,
+            DailyCheckQuestionSeeder::class
+        ]);
 //        Admin::insert([
 //            [
 //                'name'=>'Admin User',

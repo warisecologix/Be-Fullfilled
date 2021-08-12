@@ -18,7 +18,7 @@ class WeeklyGoalsResource extends JsonResource
             'id'=> $this->id,
             'day'=> $this->day,
             'goal'=> $this->goal,
-            'status'=> $this->status,
+            'status'=> $this->status == 1 ? "Accomplished" : "Not Accomplished",
         ];
     }
 }
